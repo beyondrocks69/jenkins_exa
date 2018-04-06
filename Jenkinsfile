@@ -1,10 +1,9 @@
 pipeline {
-    agent any
+    agent {docker { image 'python:3.5.1' }}
     stages {
         stage('build') {
             steps {
                 echo 'start build'
-				bat 'set path = C:\\Users\\tli56\\AppData\\Local\\Continuum\\Anaconda3\\;%path%'
 				bat 'python --version'
 				echo 'hello world!'
             }
